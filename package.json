@@ -1,6 +1,6 @@
 {
   "name": "@wopr-network/provision-server",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Embeddable Express router that makes any OSS project provisionable by wopr fleet",
   "type": "module",
   "main": "dist/index.js",
@@ -24,7 +24,8 @@
     "prepublishOnly": "npm run build"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "repository": {
     "type": "git",
