@@ -1,0 +1,47 @@
+{
+  "name": "@wopr-network/provision-server",
+  "version": "1.0.0",
+  "description": "Embeddable Express router that makes any OSS project provisionable by wopr fleet",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "check": "biome check src/ && tsc --noEmit",
+    "lint": "biome check src/",
+    "lint:fix": "biome check --fix src/",
+    "format": "biome format --write src/",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wopr-network/provision-server.git"
+  },
+  "license": "UNLICENSED",
+  "peerDependencies": {
+    "express": "^4.0.0 || ^5.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.6",
+    "@types/express": "^5.0.0",
+    "@types/node": "^25.4.0",
+    "express": "^5.1.0",
+    "supertest": "^7.1.0",
+    "@types/supertest": "^6.0.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
+}
