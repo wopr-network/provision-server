@@ -48,8 +48,8 @@ export function createProvisionRouter(adapter: ProvisionAdapter, opts?: Provisio
     assertAuth(req.header("authorization"));
 
     const body = req.body;
-    if (!body.tenantId || !body.tenantName || !body.gatewayUrl || !body.apiKey) {
-      unprocessable("Missing required fields: tenantId, tenantName, gatewayUrl, apiKey");
+    if (!body.tenantId || !body.tenantName || !body.gatewayUrl) {
+      unprocessable("Missing required fields: tenantId, tenantName, gatewayUrl");
     }
     if (!body.adminUser?.id || !body.adminUser?.email) {
       unprocessable("Missing required fields: adminUser.id, adminUser.email");
@@ -59,7 +59,7 @@ export function createProvisionRouter(adapter: ProvisionAdapter, opts?: Provisio
       tenantId: body.tenantId as string,
       tenantName: body.tenantName as string,
       gatewayUrl: body.gatewayUrl as string,
-      apiKey: body.apiKey as string,
+      apiKey: (body.apiKey as string) ?? "",
       budgetCents: (body.budgetCents as number) ?? 0,
       adminUser: {
         id: body.adminUser.id as string,
