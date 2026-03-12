@@ -1,6 +1,6 @@
 {
   "name": "@wopr-network/provision-server",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Embeddable Express router that makes any OSS project provisionable by wopr fleet",
   "type": "module",
   "main": "dist/index.js",
